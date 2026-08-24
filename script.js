@@ -4,6 +4,7 @@ const products = [
     category: "camisetas",
     emoji: "👕",
     imgClass: "img-camiseta-1",
+    img: "images.jpg",
     tag: "Primera equipación",
     name: "Camiseta Local 2026/27",
     desc: "Los colores blaugrana clásicos con la tecnología de secado rápido.",
@@ -14,6 +15,7 @@ const products = [
     category: "camisetas",
     emoji: "🎽",
     imgClass: "img-camiseta-2",
+    img: "camiseta-segunda-equipacion-fc-barcelona-26-27_pic547880ni0t0.jpg",
     tag: "Segunda equipación",
     name: "Camiseta Visitante 2026/27",
     desc: "Diseño elegante en negro con detalles dorados del escudo.",
@@ -34,10 +36,11 @@ const products = [
     category: "camisetas",
     emoji: "🕰️",
     imgClass: "img-camiseta-retro",
+    img: "sdadasd.jpg",
     tag: "Retro",
     name: "Camiseta Retro 1992 Dream Team",
     desc: "Réplica de la mítica equipación del Dream Team de Cruyff.",
-    price: 84.99
+    price: 200
   },
   {
     id: "pel-1",
@@ -99,25 +102,25 @@ const matches = [
 ];
 
 const squad = [
-  { number: 1, name: "Ter Stegen", position: "Portero", group: "porteros" },
-  { number: 13, name: "Joan García", position: "Portero", group: "porteros" },
-  { number: 2, name: "Cubarsí", position: "Defensa central", group: "defensas" },
-  { number: 3, name: "Balde", position: "Lateral izquierdo", group: "defensas" },
-  { number: 4, name: "Araújo", position: "Defensa central", group: "defensas" },
-  { number: 5, name: "Christensen", position: "Defensa central", group: "defensas" },
-  { number: 23, name: "Koundé", position: "Lateral derecho", group: "defensas" },
-  { number: 24, name: "Eric García", position: "Defensa central", group: "defensas" },
-  { number: 6, name: "Gavi", position: "Mediocentro", group: "centrocampistas" },
-  { number: 8, name: "Pedri", position: "Mediocentro", group: "centrocampistas" },
-  { number: 16, name: "Fermín López", position: "Mediapunta", group: "centrocampistas" },
-  { number: 17, name: "Casadó", position: "Pivote", group: "centrocampistas" },
-  { number: 20, name: "Dani Olmo", position: "Mediapunta", group: "centrocampistas" },
-  { number: 21, name: "De Jong", position: "Pivote", group: "centrocampistas" },
-  { number: 7, name: "Ferran Torres", position: "Extremo izquierdo", group: "delanteros" },
-  { number: 9, name: "Lewandowski", position: "Delantero centro", group: "delanteros" },
-  { number: 10, name: "Lamine Yamal", position: "Extremo derecho", group: "delanteros" },
-  { number: 11, name: "Raphinha", position: "Extremo izquierdo", group: "delanteros" },
-  { number: 14, name: "Rashford", position: "Delantero centro", group: "delanteros" }
+  { number: 1, name: "Ter Stegen", position: "Portero", group: "porteros", stats: { pj: 6, cz: 3, paradas: 21 } },
+  { number: 13, name: "Joan García", position: "Portero", group: "porteros", stats: { pj: 38, cz: 14, paradas: 136 } },
+  { number: 2, name: "Cubarsí", position: "Defensa central", group: "defensas", stats: { pj: 48, goles: 0, asist: 2 } },
+  { number: 3, name: "Balde", position: "Lateral izquierdo", group: "defensas", stats: { pj: 41, goles: 0, asist: 4 } },
+  { number: 4, name: "Araújo", position: "Defensa central", group: "defensas", stats: { pj: 28, goles: 2, asist: 1 } },
+  { number: 5, name: "Christensen", position: "Defensa central", group: "defensas", stats: { pj: 22, goles: 1, asist: 0 } },
+  { number: 23, name: "Koundé", position: "Lateral derecho", group: "defensas", stats: { pj: 54, goles: 1, asist: 3 } },
+  { number: 24, name: "Eric García", position: "Defensa central", group: "defensas", stats: { pj: 30, goles: 1, asist: 2 } },
+  { number: 6, name: "Gavi", position: "Mediocentro", group: "centrocampistas", stats: { pj: 28, goles: 3, asist: 3 } },
+  { number: 8, name: "Pedri", position: "Mediocentro", group: "centrocampistas", stats: { pj: 52, goles: 6, asist: 8 } },
+  { number: 16, name: "Fermín López", position: "Mediapunta", group: "centrocampistas", stats: { pj: 46, goles: 7, asist: 5 } },
+  { number: 17, name: "Casadó", position: "Pivote", group: "centrocampistas", stats: { pj: 36, goles: 1, asist: 2 } },
+  { number: 20, name: "Dani Olmo", position: "Mediapunta", group: "centrocampistas", stats: { pj: 39, goles: 12, asist: 5 } },
+  { number: 21, name: "De Jong", position: "Pivote", group: "centrocampistas", stats: { pj: 37, goles: 1, asist: 3 } },
+  { number: 7, name: "Ferran Torres", position: "Extremo izquierdo", group: "delanteros", stats: { pj: 47, goles: 19, asist: 4 } },
+  { number: 9, name: "Lewandowski", position: "Delantero centro", group: "delanteros", stats: { pj: 52, goles: 42, asist: 5 } },
+  { number: 10, name: "Lamine Yamal", position: "Extremo derecho", group: "delanteros", stats: { pj: 55, goles: 18, asist: 25 } },
+  { number: 11, name: "Raphinha", position: "Extremo izquierdo", group: "delanteros", stats: { pj: 57, goles: 34, asist: 22 } },
+  { number: 14, name: "Rashford", position: "Delantero centro", group: "delanteros", stats: { pj: 17, goles: 4, asist: 4 } }
 ];
 
 const groupLabels = {
@@ -159,8 +162,11 @@ function formatPrice(value) {
 function productCard(product) {
   const card = document.createElement("article");
   card.className = "card";
+  const mediaHtml = product.img
+    ? `<img class="card-img card-photo" src="${product.img}" alt="${product.name}">`
+    : `<div class="card-img ${product.imgClass}">${product.emoji}</div>`;
   card.innerHTML = `
-    <div class="card-img ${product.imgClass}">${product.emoji}</div>
+    ${mediaHtml}
     <div class="card-body">
       <span class="card-tag">${product.tag}</span>
       <h3 class="card-title">${product.name}</h3>
@@ -210,6 +216,19 @@ function renderProducts() {
   matches.forEach((m) => gridEntradas.appendChild(ticketCard(m)));
 }
 
+function statsHtml(p) {
+  if (p.group === "porteros") {
+    return `
+      <span class="stat-chip">📊 ${p.stats.pj} PJ</span>
+      <span class="stat-chip">🥅 ${p.stats.cz} CZ</span>
+      <span class="stat-chip">🧤 ${p.stats.paradas} paradas</span>`;
+  }
+  return `
+    <span class="stat-chip">📊 ${p.stats.pj} PJ</span>
+    <span class="stat-chip">⚽ ${p.stats.goles}</span>
+    <span class="stat-chip">🅰️ ${p.stats.asist}</span>`;
+}
+
 function renderSquad() {
   Object.keys(groupLabels).forEach((groupKey) => {
     const title = document.createElement("h3");
@@ -225,7 +244,8 @@ function renderSquad() {
         card.innerHTML = `
           <div class="player-number">${p.number}</div>
           <h4 class="player-name">${p.name}</h4>
-          <span class="player-position">${p.position}</span>`;
+          <span class="player-position">${p.position}</span>
+          <div class="player-stats">${statsHtml(p)}</div>`;
         grid.appendChild(card);
       });
     squadGroups.appendChild(title);
@@ -276,8 +296,11 @@ function renderCart() {
 
       const row = document.createElement("div");
       row.className = "cart-item";
+      const thumbHtml = item.img
+        ? `<img class="cart-item-thumb" src="${item.img}" alt="${item.name}">`
+        : `<div class="cart-item-thumb ${item.imgClass || ""}" style="${item.imgClass ? "" : "background:#fdecec;"}">${item.emoji}</div>`;
       row.innerHTML = `
-        <div class="cart-item-thumb ${item.imgClass || ""}" style="${item.imgClass ? "" : "background:#fdecec;"}">${item.emoji}</div>
+        ${thumbHtml}
         <div>
           <p class="cart-item-name">${item.name}</p>
           <p class="cart-item-price">${formatPrice(item.price)} × ${item.qty}</p>

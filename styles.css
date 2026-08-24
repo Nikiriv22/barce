@@ -736,3 +736,15 @@ img {
   color: var(--muted);
   font-size: 0.94rem;
 }
+
+.card-photo {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  object-position: top;
+}
+
+img.cart-item-thumb {
+  display: block;
+  object-fit: cover;
+}

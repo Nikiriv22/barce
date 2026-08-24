@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barça Store | Tienda Oficial del FC Barcelona</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#inicio" class="logo">
+        <span class="logo-badge">FCB</span>
+        <span class="logo-text">Barça <strong>Store</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#camisetas">Camisetas</a></li>
+        <li><a href="#pelotas">Pelotas</a></li>
+        <li><a href="#plantilla">Plantilla</a></li>
+        <li><a href="#entradas">Entradas</a></li>
+      </ul>
+      <button class="cart-button" id="cart-button" aria-label="Abrir carrito">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <h1>Més que una botiga</h1>
+        <p>Lleva los colores blaugrana a donde vayas: camisetas, pelotas y entradas para vivir el fútbol en el Spotify Camp Nou.</p>
+        <div class="hero-actions">
+          <a href="#camisetas" class="btn btn-primary">Ver productos</a>
+          <a href="#entradas" class="btn btn-outline">Comprar entradas</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section" id="camisetas">
+      <div class="container">
+        <h2 class="section-title">Camisetas</h2>
+        <p class="section-subtitle">Primera equipación, segunda equipación y ediciones especiales.</p>
+        <div class="grid" id="grid-camisetas"></div>
+      </div>
+    </section>
+
+    <section class="products-section alt-bg" id="pelotas">
+      <div class="container">
+        <h2 class="section-title">Pelotas</h2>
+        <p class="section-subtitle">Balones oficiales para jugar y coleccionar.</p>
+        <div class="grid" id="grid-pelotas"></div>
+      </div>
+    </section>
+
+    <section class="products-section alt-bg" id="plantilla">
+      <div class="container">
+        <h2 class="section-title">Primera plantilla</h2>
+        <p class="section-subtitle">Los cracks que defienden los colores blaugrana esta temporada.</p>
+        <div id="squad-groups"></div>
+      </div>
+    </section>
+
+    <section class="products-section" id="entradas">
+      <div class="container">
+        <h2 class="section-title">Entradas</h2>
+        <p class="section-subtitle">Vive la magia del Spotify Camp Nou partido a partido.</p>
+        <div class="grid grid-tickets" id="grid-entradas"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p><strong>Barça Store</strong> — Proyecto de demostración. No afiliado oficialmente al FC Barcelona.</p>
+      <p>&copy; 2026 Barça Store. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Carrito de compras">
+    <div class="cart-header">
+      <h3>Tu carrito</h3>
+      <button class="close-cart" id="close-cart" aria-label="Cerrar carrito">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <strong id="cart-total">0,00 €</strong>
+      </div>
+      <button class="btn btn-primary btn-block" id="checkout-btn">Finalizar compra</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="toast" id="toast"></div>
+
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar">&times;</button>
+
+      <div id="checkout-view">
+        <h2 class="modal-title" id="modal-title">Datos de compra</h2>
+        <p class="modal-summary" id="modal-summary"></p>
+        <form id="checkout-form" novalidate>
+          <label>Nombre completo
+            <input type="text" id="f-nombre" placeholder="Juan Pérez" required>
+          </label>
+          <label>Email
+            <input type="email" id="f-email" placeholder="juan@correo.com" required>
+          </label>
+          <label>Teléfono (opcional)
+            <input type="tel" id="f-telefono" placeholder="+34 600 000 000">
+          </label>
+          <label>Dirección
+            <input type="text" id="f-direccion" placeholder="Calle, número, piso" required>
+          </label>
+          <div class="form-row">
+            <label>Ciudad
+              <input type="text" id="f-ciudad" placeholder="Barcelona" required>
+            </label>
+            <label>Código postal
+              <input type="text" id="f-cp" inputmode="numeric" placeholder="08001" required>
+            </label>
+          </div>
+          <label>País
+            <select id="f-pais">
+              <option>España</option>
+              <option>México</option>
+              <option>Argentina</option>
+              <option>Colombia</option>
+              <option>Chile</option>
+              <option>Perú</option>
+              <option>Estados Unidos</option>
+              <option>Otro</option>
+            </select>
+          </label>
+          <fieldset class="pay-methods">
+            <legend>Método de pago</legend>
+            <label><input type="radio" name="pago" value="Tarjeta" checked> 💳 Tarjeta</label>
+            <label><input type="radio" name="pago" value="Bizum"> 📱 Bizum</label>
+            <label><input type="radio" name="pago" value="Transferencia"> 🏦 Transferencia</label>
+          </fieldset>
+          <p class="form-error" id="form-error" hidden></p>
+          <button type="submit" class="btn btn-primary btn-block">Confirmar pedido</button>
+        </form>
+      </div>
+
+      <div id="success-view" hidden>
+        <div class="success-icon">✅</div>
+        <h2 class="modal-title">¡Pedido confirmado!</h2>
+        <p id="success-text"></p>
+        <button class="btn btn-primary btn-block" id="close-success">Seguir comprando</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
